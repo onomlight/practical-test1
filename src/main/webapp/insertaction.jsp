@@ -12,11 +12,27 @@
 <body>
 <%
 request.setCharacterEncoding("UTF-8");
+	
+String resvno=request.getParameter("resvno");
+String empno=request.getParameter("empno");
+String resvdate=request.getParameter("resvdate");
+String seatno=request.getParameter("seatno");
 
 try{
 	Connection conn = Util.getConnection(); //자동완성기능을 사용하기위해 connection 이랑 나머지를 더 추가하면됨
 	String sql="insert into tbl_resv_202108 values(?,?,?,?)";
 	PreparedStatement pstmt = conn.prepareStatement(sql);
+	
+	
+	pstmt.setString(1,resvno);
+	pstmt.setString(2,empno);
+	pstmt.setString(3,resvdate);
+	pstmt.setString(4,seatno);
+	
+	pstmt.executeUpdate();
+	%>
+<jsp:forward page="insert.jsp"></jsp:forward>	
+	<%
 	
 }catch(Exception e){
 	e.printStackTrace();

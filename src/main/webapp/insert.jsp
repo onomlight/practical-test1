@@ -13,7 +13,7 @@
 <section style="position: fixed; top: 70px; left: 0px; width: 100%; height: 100%; ">
 <h2 style="text-align: center;">근무좌석예약</h2>
 
-<form name="frm" action="" style="display: flex; align-items: center; justify-content: center;">
+<form method="post" action="insertaction.jsp" name="frm" action="" style="display: flex; align-items: center; justify-content: center;">
 <table border="1">
 	<tr>
 		<td>예약번호</td>

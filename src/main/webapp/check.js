@@ -33,3 +33,17 @@ function re() {
 	alert("처음부터 다시 입력시작");
 	document.frm.reset();
 }
+
+function search(){
+	if(frm2.empno.value.length==""){
+		alert("사원번호가 입력되지 않");
+		frm2.empno.focus();
+		return false;
+	}	else
+	document.frm2.submit();
+	return true;
+}
+
+function home(){
+	window.location='index.jsp';
+}
